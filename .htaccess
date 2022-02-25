@@ -1,0 +1,36 @@
+# Turn RewriteEngine On
+RewriteEngine On
+
+# Rewrite for category.php
+RewriteRule ^([^/\.]+)/([^/\.]+)/?$ category.php?locationURL=$1&category_url=$2
+
+# Rewrite for invitation.php
+RewriteRule ^([^/\.]+)/([^/\.]+)?$ invitation.php?url=$1&caturl=$2 
+
+; # Rewrite for invitation.php
+; RewriteRule ^([^/\.]+)?$ invitation.php?locurl_inv=$1 [NC,L]
+
+# Rewrite for listing-page.php
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)?$ listing-page.php?locurl=$1&caturl=$2&listurl=$3 
+
+
+# Rewrite for review.php
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)?$ review.php?locurl_r=$1&caturl_r=$2&listurl_r=$3&submitReview=$4
+
+
+# Rewrite for categories.php
+RewriteRule ^([^/\.]+)?$ categories.php?categories=$1 
+
+# RewriteRule for vendors.php
+# RewriteRule ^(.*)$ http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/vendprs.php/$1 [R=301,L]
+
+; # Redirect for live-booking.php
+; RewriteEngine on
+; RewriteCond %{HTTP_HOST} ^beta.weddingservices.co.in/$
+; RewriteRule ^(.*) http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/live-booking.php
+
+
+
+
+
+
