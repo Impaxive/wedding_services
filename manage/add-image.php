@@ -52,9 +52,9 @@ if (!isset($_SESSION['usernow'])) {
                         echo "<script> alert('Only Images are allowed. Please choose a JPG OR JPEG OR PNG file');</script>";
                     }
 
-                    if($file_size > 2097152){
-                        $errors[]='File size should not exceed 2 MB';
-                        echo "<script> alert('File size should not exceed 2 MB');</script>";
+                    if($file_size > 150000){
+                        $errors[]='File size should not exceed 150 KB';
+                        echo "<script> alert('File size should not exceed 150 KB');</script>";
                     }else{
                         move_uploaded_file($file_tmp,$uploadFolder.$image_names);
                     }

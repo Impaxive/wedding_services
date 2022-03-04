@@ -81,9 +81,9 @@ if (!isset($_SESSION['usernow'])) {
                                 echo "<script> alert('Only Images are allowed. Please choose a JPG OR JPEG OR PNG file.');</script>";
                             }
             
-                            if($file_size > 2097152){
-                                $errors[]='File size should not exceed 2 MB';
-                                echo "<script> alert('File size should not exceed 2 MB');</script>";
+                            if($file_size > 30000){
+                                $errors[]='File size should not exceed 30 KB';
+                                echo "<script> alert('File size should not exceed 30 KB');</script>";
                             }else{
                                 move_uploaded_file($file_tmp,$uploadFolder.$image_names);
                             }
@@ -112,9 +112,9 @@ if (!isset($_SESSION['usernow'])) {
                                 echo "<script> alert('Only Images are allowed. Please choose a JPG OR JPEG OR PNG file.');</script>";
                             }
             
-                            if($file_size > 2097152){
-                                $errors[]='File size should not exceed 2 MB';
-                                echo "<script> alert('File size should not exceed 2 MB');</script>";
+                            if($file_size > 30000){
+                                $errors[]='File size should not exceed 30 KB';
+                                echo "<script> alert('File size should not exceed 30 KB');</script>";
                             }else{
                                 move_uploaded_file($file_tmp,$uploadFolder.$thumbnail_img);
                             }
@@ -144,9 +144,9 @@ if (!isset($_SESSION['usernow'])) {
                               echo "<script> alert('Only Images are allowed. Please choose a JPG OR JPEG OR PNG file.');</script>";
                             }
             
-                            if($file_size > 2097152){
-                                $errors[]='File size should not exceed 2 MB';
-                                echo "<script> alert('File size should not exceed 2 MB');</script>";
+                            if($file_size > 150000){
+                                $errors[]='File size should not exceed 150 KB';
+                                echo "<script> alert('File size should not exceed 150 KB');</script>";
                             }else{
                                 if(move_uploaded_file($imageTmpName,$uploadFolder.$alubumImg)){
                                     $query="INSERT INTO listing_images(correl_id,image_name,created_date)VALUES('$correl_id','$alubumImg','$created_date')";
