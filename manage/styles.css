@@ -1,3 +1,38 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0px;
+    font-family: 'segoe ui';
+  }
+
+  
+  .nav {
+    height: 100px;
+    width: 100%;
+    /* background-color: #1177ca; */
+    padding: 10px 0;
+    background-color: white;
+    position: relative;
+  }
+  
+  .nav > .nav-header {
+    display: inline;
+
+  }
+  .navbar{
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%);
+    /* position: relative; */
+    z-index: 2;
+    height: 100px;
+  }
+  
+ 
+
+  
+  
+
 #wrapper {
     overflow-x: hidden;
   }
@@ -6,6 +41,18 @@
     width: 17rem;
     transition: margin 0.25s ease-out;
   }
+
+ .scroller{
+    height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+ }
+
+ 
+span.i {
+    vertical-align: middle;
+    margin-right: 15px;
+}
 
 
 
@@ -52,7 +99,7 @@
 li > a.link-dark, li p > a.link-dark {
     border-radius: 5px;
     color: black;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     text-decoration: none !important;
 }
@@ -67,18 +114,23 @@ li#welcome a:hover, li#admin p > a:hover {
 
 li#mainMenu {
     padding: 10px;
+    line-height: 40px;
 }
 
-li#mainMenu:hover {
-    background: #dad1d1;
-}
 
-li#mainMenu:hover a.link-dark {
+
+/* .link-dark:focus,.link-dark:hover {
     color: rgb(255, 255, 255);
+} */
+
+li#mainMenu:hover a.link-dark ,li#mainMenu:active {
+    /* background: #1478c3;
+    color: rgb(255, 255, 255); */
+    color: #1478c3;
 }
 
 li#subMenu ul li a {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -86,14 +138,16 @@ li#subMenu ul li {
     padding: 5px 0px;
 }
 
-li#subMenu a:hover {
-    background: #dad1d1;
-    padding: 5px 10px;
-    color: white;
+li#subMenu a:hover,li#subMenu a:active {
+    /* background: #1478c3; */
+    /* padding: 5px 10px; */
+    color: #1478c3;
 }
 
 li#subMenu a.link-dark {
     margin-top: 20px;
+    line-height: 40px;
+    margin-left: 1.25em !important;
 }
 
 li.text-toggle[aria-expanded=false] .text-collapsed {
@@ -187,12 +241,25 @@ table.dataTable {
 button.dt-button {
     border: unset !important;
     border-radius: 5px !important;
-    background: rgb(190, 166, 166) !important;
-    color:rgb(255, 255, 255) !important
+    /* background: rgb(190, 166, 166) !important;
+    color:rgb(255, 255, 255) !important */
+    background: #fff !important;
+    color: rgba(0,0,0,.87) !important;
+    font-weight: 500;
+    line-height: 36px;
+    min-width:64px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+    transform: translate3d(0, 0, 0);
+    transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 button.dt-button:hover {
-    background: rgba(190, 166, 166, 0.836) !important;
+    /* background: rgba(190, 166, 166, 0.836) !important; */
+    background: rgb(0 0 0 / 12%) !important;
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 #example_filter {
@@ -247,6 +314,96 @@ input[type="color"]:focus,
 .text-center{
     text-align:center;
 }
+.ml-auto{
+    margin-left: auto;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.dropdown-shadow {
+    background: #fff;
+    min-width: 9rem;
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.dropdown-padding{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.dropdown-item:hover:not([disabled]) {
+    background: rgba(0,0,0,.04);}
+
+.font-14{font-size: 14px;}
+.font-15{font-size: 15px;}
+.font-16{font-size: 16px;}
+.font-17{font-size:17px}
+.font-18{font-size:18px;}
+.font-19{font-size: 19px;}
+.font-20{font-size: 20px;}
+
+.font-weight-300{ font-weight: 300px;}
+.font-weight-400{ font-weight: 400px;}
+.font-weight-500{ font-weight: 500px;}
+.font-weight-600{ font-weight: 600px;}
+.font-weight-700{ font-weight: 700px;}
+
+
+.padding-10{padding: 10px 10px 10px 10px;}
+.padding-15{padding: 15px;}
+.padding-20{padding: 20px;}
+
+
+.h-10{height: 10px;}
+.h-15{height: 15px;}
+.h-20{height: 20px;}
+.h-25{height: 25px;}
+.h-30{height: 30px;}
+.h-35{height: 35px;}
+.h-40{height: 40px;}
+.h-45{height: 45px;}
+.h-50{height: 50px;}
+.h-55{height: 55px;}
+.h-60{height: 60px;}
+.h-65{height: 65px;}
+.h-70{height: 70px;}
+.h-75{height: 75px;}
+.h-80{height: 80px;}
+.h-85{height: 85px;}
+.h-90{height: 90px;}
+.h-95{height: 95px;}
+.h-100{height: 100px;}
+
+
+.margin-5px-left{margin-left: 5px;}
+.margin-10px-left{margin-left: 10px;}
+.margin-15px-left{margin-left: 15px;}
+.margin-20px-left{margin-left: 20px;}
+.margin-25px-left{margin-left: 25px;}
+.margin-30px-left{margin-left: 30px;}
+.margin-35px-left{margin-left: 35px;}
+.margin-40px-left{margin-left: 40px;}
+.margin-45px-left{margin-left: 45px;}
+.margin-50px-left{margin-left: 50px;}
+.margin-55px-left{margin-left: 55px;}
+.margin-60px-left{margin-left: 60px;}
+
+
+.margin-5px-right{margin-right: 5px;}
+.margin-10px-right{margin-right: 10px;}
+.margin-15px-right{margin-right: 15px;}
+.margin-20px-right{margin-right: 20px;}
+.margin-25px-right{margin-right: 25px;}
+.margin-30px-right{margin-right: 30px;}
+.margin-35px-right{margin-right: 35px;}
+.margin-40px-right{margin-right: 40px;}
+.margin-45px-right{margin-right: 45px;}
+.margin-50px-right{margin-right: 50px;}
+.margin-55px-right{margin-right: 55px;}
+.margin-60px-right{margin-right: 60px;}
+
+
 .margin-5px-bottom{margin-bottom: 5px;}
 .margin-10px-bottom{margin-bottom: 10px;}
 .margin-15px-bottom{margin-bottom: 15px;}
@@ -274,3 +431,29 @@ input[type="color"]:focus,
 .margin-50px-top{margin-top: 50px;}
 .margin-55px-top{margin-top: 55px;}
 .margin-60px-top{margin-top: 60px;}
+
+.bg-color{background:rgb(238, 233, 233);}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #e9e9e9; 
+    border-radius: 10px;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d3d3d3; 
+    border-radius: 10px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: lightgray; 
+}

@@ -243,8 +243,11 @@ if (!isset($_SESSION['usernow'])) {
                             <div class="form-group">
                               <label><b>Featured Image</b></label>
                               <input type="file" name="image_name" class="form-control">
-                              <div class="col-md-12 bg-light p-3">
-                                <img src="https://mywedservices.s3.ap-south-1.amazonaws.com/<?php echo $featured_image ?>" height="200px">
+                              <div class="col-lg-12 margin-15px-top">
+                                <p><span class="text-danger">Note :</span> Imange Size : Size of the image should be less than 30 KB and only JPG , JPEG and PNG formats are allowed.</p>
+                              </div>
+                              <div class="col-md-12 p-3">
+                                <img src="https://mywedservices.s3.ap-south-1.amazonaws.com/<?php echo $featured_image ?>" width="200px" height="200px">
                               </div>
                             </div>
                           </div>
@@ -252,8 +255,11 @@ if (!isset($_SESSION['usernow'])) {
                             <div class="form-group">
                               <label><b>Thumbnail Image</b></label>
                               <input type="file" name="thumbnail_img" class="form-control">
-                              <div class="col-md-12 bg-light p-3">
-                                <img src="https://mywedservices.s3.ap-south-1.amazonaws.com/<?php echo $thumb_img ?>" height="200px">
+                              <div class="col-lg-12 margin-15px-top">
+                                  <p><span class="text-danger">Note :</span> Imange Size : Size of the image should be less than 30 KB and only JPG , JPEG and PNG formats are allowed.</p>
+                              </div>
+                              <div class="col-md-12 p-3">
+                                <img src="https://mywedservices.s3.ap-south-1.amazonaws.com/<?php echo $thumb_img ?>" width="200px" height="200px">
                               </div>
                             </div>
                           </div>

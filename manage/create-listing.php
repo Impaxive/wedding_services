@@ -227,18 +227,27 @@ if (!isset($_SESSION['usernow'])) {
                             <div class="form-group">
                               <label><b>Featured Image</b></label>
                               <input type="file" name="featured_image" class="form-control">
+                              <div class="col-lg-12 margin-15px-top">
+                                <p><span class="text-danger">Note :</span> Imange Size : Size of the image should be less than 30 KB and only JPG , JPEG and PNG formats are allowed.</p>
+                              </div>
                             </div>
                           </div>
                           <div class="col-sm-12">
                             <div class="form-group">
                               <label><b>Thumbnail Image</b></label>
                               <input type="file" name="thumbnail_img" class="form-control">
+                              <div class="col-lg-12 margin-15px-top">
+                                <p><span class="text-danger">Note :</span> Imange Size : Size of the image should be less than 30 KB and only JPG , JPEG and PNG formats are allowed.</p>
+                              </div>
                             </div>
                           </div>
                           <div class="col-sm-12">
                             <div class="form-group">
                               <label><b>Photo Album</b></label>
                               <input type="file" name="album_images[]" multiple class="form-control">
+                              <div class="col-lg-12 margin-15px-top">
+                                <p><span class="text-danger">Note :</span> Imange Size : Size of the image should be less than 150 KB and only JPG , JPEG and PNG formats are allowed.</p>
+                              </div>
                             </div>
                           </div>
                           <div class="col-sm-12">
