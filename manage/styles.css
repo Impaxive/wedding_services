@@ -5,6 +5,7 @@
   body {
     margin: 0px;
     font-family: 'segoe ui';
+    position: relative;
   }
 
   
@@ -25,16 +26,29 @@
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%);
     /* position: relative; */
     z-index: 2;
-    height: 100px;
+    height: 85px;
   }
+
+  /* .scroll-div{
+      position: fi;
+  } */
   
  
 
   
-  
+.nav-header{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+    background: #fff;
+}
 
 #wrapper {
     overflow-x: hidden;
+    position: fixed;
+    top: 85px;
+    width: 100vw;
   }
   
   #sidebar-wrapper {
@@ -43,7 +57,7 @@
   }
 
  .scroller{
-    height: 100vh;
+    height: calc(100vh - 85px) !important;
     overflow-y: auto;
     overscroll-behavior-y: contain;
  }
@@ -166,12 +180,18 @@ li.text-toggle[aria-expanded=true] .text-expanded {
 
 /* Sidebar */
 .sidebarShadow {
+    /* position: fixed; */
+    z-index: 1;
     box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)!important;
-    min-height: 100vh !important;
+    /* min-height: 100vh !important; */
 }
 
 .main-content {
-    min-height: 100vh !important;
+    height: calc(100vh - 85px) !important;
+    position: relative;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    overscroll-behavior-y:contain;
 }
 
 /*
@@ -321,10 +341,12 @@ input[type="color"]:focus,
 .w-100{
     width: 100%;
 }
+.dropdown-menu{
+    min-width: 9rem;
+}
 
 .dropdown-shadow {
     background: #fff;
-    min-width: 9rem;
     box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
 }
 
@@ -402,6 +424,14 @@ input[type="color"]:focus,
 .margin-50px-right{margin-right: 50px;}
 .margin-55px-right{margin-right: 55px;}
 .margin-60px-right{margin-right: 60px;}
+.margin-65px-right{margin-right: 65px;}
+.margin-70px-right{margin-right: 70px;}
+.margin-75px-right{margin-right: 75px;}
+.margin-80px-right{margin-right: 80px;}
+.margin-85px-right{margin-right: 85px;}
+.margin-90px-right{margin-right: 90px;}
+.margin-95px-right{margin-right: 95px;}
+.margin-100px-right{margin-right: 100px;}
 
 
 .margin-5px-bottom{margin-bottom: 5px;}

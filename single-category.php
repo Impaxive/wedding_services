@@ -186,6 +186,7 @@
                         $position = $row['position'];
                         $name = $row['vendor_name'];
                         $vendor_name = $row['vendor_name'];
+                        $v_business_name = $row['v_business_name'];
 
                         // $v_sql = "SELECT * FROM vendor WHERE vendor_name = '$name' AND paln_type='1'";
                         // $v_res = $conn->query($v_sql);

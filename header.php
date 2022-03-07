@@ -111,7 +111,7 @@ session_start();
         }
 
          /* The Close Button */
-         .close {
+        .close {
            color: #000;
            float: right;
            font-size: 28px;
@@ -249,48 +249,235 @@ session_start();
         a {
             text-decoration: unset !important;
         }
+        /* mycheckavModal CSS */
+
+       /* .modal-content {
+           min-height: 600px;
+        }
+        .modal-backdrop {
+            background-color:transparent;
+        }
+
+         /* The Close Button */
+        /*.close-model {
+           color: #000;
+           float: right;
+           font-size: 28px;
+           font-weight: bold;
+           opacity: 1;
+        }
+
+        .close-model:hover,.close-model:focus {
+           color: rgb(90, 70, 70);
+           text-decoration: none;
+           cursor: pointer;
+        } */
     </style>
 </head>
 
 <body>
 <!-- Modal -->
 <form enctype="multipart/form-data" method="POST">
-<div class="modal" id="myModal">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content" style="min-height: 450px;">
-            <div class="modal-header">
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
-                <h4 class="modal-title">Select City</h4>
-            </div>
-            <div class="modal-body">
-                <div class="main-search-input-item">
-                    <select name="location_url" class="chosen-select" data-placeholder="Search Your City">
-                        <option></option>
-                        <?php 
-                            $sql3 = "SELECT * FROM locations";
-                            $result3 = $conn->query($sql3);
-                            // output data of each row
-                            if($result3->num_rows > 0){
-                                while ($row = $result3->fetch_assoc()) {
-                                    $city = $row['city'];
-                                    $locationId = $row['location_id'];
-                                    $location_url = $row['url'];
-                        ?>
-                            <option value="<?php echo $row['url']; ?>"><?php echo $city; ?></option>
-                        <?php 
-                                }
-                            }
-                        ?>
-                    </select>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content" style="min-height: 450px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    <h4 class="modal-title">Select City</h4>
                 </div>
+                <div class="modal-body">
+                    <div class="main-search-input-item">
+                        <select name="location_url" class="chosen-select" data-placeholder="Search Your City">
+                            <option></option>
+                            <?php 
+                                $sql3 = "SELECT * FROM locations";
+                                $result3 = $conn->query($sql3);
+                                // output data of each row
+                                if($result3->num_rows > 0){
+                                    while ($row = $result3->fetch_assoc()) {
+                                        $city = $row['city'];
+                                        $locationId = $row['location_id'];
+                                        $location_url = $row['url'];
+                            ?>
+                                <option value="<?php echo $row['url']; ?>"><?php echo $city; ?></option>
+                            <?php 
+                                    }
+                                }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="button" type="submit" name="submitloc">Submit</button>
+                </div> 
             </div>
-            <div class="modal-footer">
-                <button class="button" type="submit" name="submitloc">Submit</button>
-            </div> 
         </div>
     </div>
-</div>
 </form>
+
+
+<?php echo $_SESSION['list_vendor_id'];
+echo $_SESSION['list_individual_id'];
+ ?>
+
+<form enctype="multipart/form-data" method="POST">
+	<div class="modal" id="mycheckavModal">
+		<div class="modal-dialog">
+			<div class="modal-content" style="450px">
+				<div class="modal-header">
+					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+					<h4 class="modal-title">Check Availability</h4>
+				</div>
+					<?php
+						if (isset($_POST['submitca'])){
+							$name=$_POST['name'];
+							$email_id=$_POST['email_id'];
+							$created_date =date('Y-m-d');
+							$mobile_number = $_POST['mobile_number'];
+							$requirement = $_POST['requirement'];
+							$from_d = $_POST['from_date'];
+							$from_date = date('Y-m-d', strtotime($from_d));
+							$to_d = $_POST['to_date'];
+							$to_date = date('Y-m-d', strtotime($to_d));
+							$budget = $_POST['budget'];
+
+                            $v_name = $_SESSION['list_vendor_id'];
+                            $listing_id = $_SESSION['list_individual_id'];
+
+							$sql = "INSERT INTO contact(name,email_id,mobile_number,requirement,list_id,vendor_id,from_date,to_date,budget,created_date)
+									VALUES('$name','$email_id','$mobile_number','$requirement','$listing_id','$v_name','$from_date','$to_date','$budget','$created_date')";
+							$insresult = $conn->query($sql);
+							if($insresult === TRUE){
+								$new_id = $conn->insert_id;
+								// echo '<script> alert("Request Submitted Successfully");</script>';
+								// echo "<script>window.location.href='http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/$locurl/$catUrl/$listurl';</script>";
+							}
+							else{
+								echo '<script> alert("Something went wrong!");</script>';
+							}
+						}
+					?>
+				<div class="modal-body">
+					<fieldset>
+						<div class="row">
+							<div class="col-md-12">
+								<label>Name:</label>
+								<input type="text" value="" name="name" />
+							</div>
+								
+							<div class="col-md-6">
+								<label>Email:</label>
+								<input type="email" value="" name="email_id" />
+							</div>
+
+							<div class="col-md-6">
+								<label>Mobile Number:</label>
+								<input type="number" value="" name="mobile_number" />
+							</div>
+
+							<div class="col-md-6">
+								<label>From Date:</label>
+								<input type="date" value="" name="from_date" style="margin: 0px 0px 16px 0px;" />
+							</div>
+
+							<div class="col-md-6">
+								<label>To Date:</label>
+								<input type="date" value="" name="to_date" style="margin: 0px 0px 16px 0px;" />
+							</div>
+
+							<div class="col-md-12">
+								<label>Budget:</label>
+								<input type="text" value="" name="budget" />
+							</div>
+
+							<div class="col-md-12">
+								<label>Requirement:</label>
+								<textarea type="text" rows="2" value="" name="requirement"></textarea>
+							</div>
+						</div>
+
+					</fieldset>
+				</div>
+				<div class="modal-footer">
+					<button class="button" type="submit" name="submitca">Submit</button>
+					<div class="clearfix"></div>
+				</div> 
+			</div>
+		</div>
+	</div>
+</form>
+
+
+
+<form enctype="multipart/form-data" method="POST">
+    <div class="modal" id="mycontactModal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <span class="close" data-bs-dismiss="modal" aria-label="Close">&times;</span> -->
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    <h4 class="modal-title">Contact</h4>
+                </div>
+                    <?php
+                        if (isset($_POST['submitcontact'])){
+                            $name=$_POST['name'];
+                            $email_id=$_POST['email_id'];
+                            $created_date =date('Y-m-d');
+                            $mobile_number = $_POST['mobile_number'];
+                            $requirement = $_POST['requirement'];
+
+                            $v_name = $_SESSION['list_vendor_id'];
+                            $listing_id = $_SESSION['list_individual_id'];
+
+                            $sql = "INSERT INTO contact(name,email_id,mobile_number,requirement,list_id,vendor_id,created_date)
+                                    VALUES('$name','$email_id','$mobile_number','$requirement','$listing_id','$v_name','$created_date')";
+                            $insresult = $conn->query($sql);
+                            if($insresult === TRUE){
+                                $new_id = $conn->insert_id;
+                                // echo '<script> alert("Request Submitted Successfully");</script>';
+                                // echo "<script>window.location.href='http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/$locurl/$catUrl/$listurl';</script>";
+                            }
+                            else{
+                                echo '<script> alert("Something went wrong!");</script>';
+                            }
+                        }
+                    ?>
+                <div class="modal-body">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Name:</label>
+                                <input type="text" value="" name="name" />
+                            </div>
+                                
+                            <div class="col-md-12">
+                                <label>Email:</label>
+                                <input type="email" value="" name="email_id" />
+                            </div>
+
+                            <div class="col-md-12">
+                                <label>Mobile Number:</label>
+                                <input type="number" value="" name="mobile_number" />
+                            </div>
+
+                            <div class="col-md-12">
+                                <label>Requirement:</label>
+                                <input type="text" value="" name="requirement">
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button class="button" type="submit" name="submitcontact">Submit</button>
+                    <div class="clearfix"></div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</form>
+
     <div id="wrapper">
 
         <!-- Header Container ================================================== -->

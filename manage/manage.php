@@ -37,7 +37,7 @@
       <div class="row g-0">
         <div class="col-3 p-3">
         </div>
-        <div class="col-6 main-content" style="margin-top:100px">
+        <div class="col-6" style="margin-top:100px">
             <div class="p-4">
                 <div class="card">
                     <div class="pt-3 px-5 text-center">

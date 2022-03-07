@@ -7,7 +7,7 @@ if (!isset($_SESSION['usernow'])) {
   } else {
 }
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,19 +19,12 @@ if (!isset($_SESSION['usernow'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.print.min.js"></script>
+
 </head>
 <body>
     <div id="wrapper">
-        <div class="row g-0">
+        <div class="row g-0"> -->
+            <?php include("header.php") ?>
             <?php include("sidebar.php") ?>
             <div class="col-9 main-content">
                 <div class="pt-3 px-3">
@@ -45,7 +38,7 @@ if (!isset($_SESSION['usernow'])) {
                                     <tr>
                                         <th style="display:none">ID</th>
                                         <th>Title</th>
-                                        <th>Description</th>
+                                        <!-- <th>Description</th> -->
                                         <th>Created Date</th>
                                         <th style="width:30%">Action</th>
                                     </tr>
@@ -58,7 +51,7 @@ if (!isset($_SESSION['usernow'])) {
                                             while($row = $result->fetch_assoc()){
                                                 $id = $row['category_id'];
                                                 $title = $row['title'];
-                                                $desc = substr($row['description'],0,30);                                            
+                                                // $desc = substr($row['description'],0,30);                                            
                                                 $created_date = $row['created_date'];
 
                                                 $editvar = "/manage/edit-category.php?id=";
@@ -69,7 +62,6 @@ if (!isset($_SESSION['usernow'])) {
                                                     "<tr>
                                                         <td style ='display:none'>$id</td>
                                                         <td>$title</td>
-                                                        <td>$desc</td>
                                                         <td>$created_date</td>
                                                         <td>
                                                             <a href='$urledit'><button class='btn btn-success btn-sm w-25'>EDIT</button></a>
@@ -88,9 +80,9 @@ if (!isset($_SESSION['usernow'])) {
                                     <tr>
                                         <th style="display:none">ID</th>
                                         <th>Title</th>
-                                        <th>Description</th>
+                                        <!-- <th>Description</th> -->
                                         <th>Created Date</th>
-                                        <th style="width:30%">Action</th>
+                                        <th style="width:50%">Action</th>
                                     </tr>
                                 </tfoot>
                             </table>     
@@ -128,6 +120,15 @@ if (!isset($_SESSION['usernow'])) {
     </div>
 
     <script type="javascript" src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.print.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#example').DataTable( {

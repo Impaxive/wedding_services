@@ -1,12 +1,6 @@
 <div class="col-3 scroller sidebarShadow">
   <div class="d-flex flex-column scroll-div">
     <ul class="list-unstyled">
-      <!-- <li id="admin p-3">
-        <div class="d-flex justify-content-center">
-          <a href="index.html"><img src="https://mywedservices.s3.ap-south-1.amazonaws.com/images/amsan-wedding-services.png" style="height: 40px" alt="" /></a>
-        </div>
-        <br>
-      </li> -->
       <li id="mainMenu" class="text-toggle" data-bs-toggle="collapse" data-bs-target="#vendorsVenues" aria-expanded="false">
         <a href="#" class="link-dark py-1 p-3">
           <i class="fas fa-chart-pie me-3"></i> Vendors/Venues
