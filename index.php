@@ -965,52 +965,40 @@
             </div>
 
             <div class="row">
-                
-                <div class="col-md-4">
-                    <a href="/HTML/Wedding-Stories1.html" class="blog-compact-item-container">
-                        <div class="blog-compact-item">
-                            <img src="images1/weddingstories/AdobeStock_286280748.jpeg" alt="">
-                            <div class="blog-compact-item-content">
-                                <ul class="blog-post-tags">
-                                </ul>
-                                <h3>Event for you of a lifetime</h3>
-                                <p>Make the most memorable day of your lifetime with our certified vendors and let us make it possible for you.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-               
-                <div class="col-md-4">
-                    <a href="/HTML/Wedding-Stories2.html" class="blog-compact-item-container">
-                        <div class="blog-compact-item">
-                            <img src="images1/weddingstories/23.jpg" alt="">
-                            <div class="blog-compact-item-content">
-                                <ul class="blog-post-tags">
-                                </ul>
-                                <h3>Search, Book,Relax and Enjoy</h3>
-                                <p>Make your dream come true of having a fancy wedding affair by search your opportunity, book your vendor, relax and enjoy your occasion.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-md-4">
-                    <a href="/HTML/Wedding-Stories3.html" class="blog-compact-item-container">
-                        <div class="blog-compact-item">
-                            <img src="images1/weddingstories/24.jpg" alt="">
-                            <div class="blog-compact-item-content">
-                                <ul class="blog-post-tags">
-                                </ul>
-                                <h3>Have a grandeur and gracious Wedding  from us</h3>
-                                <p>Make your wedding experience the best and memorable one for you and cherish every moment of your life.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
+                <?php 
+                $sql_p = "SELECT * FROM posts ORDER BY post_id DESC LIMIT 3";
+                $res_p = $conn->query($sql_p);
+                if($res_p->num_rows > 0){
+                    while($row = $res_p->fetch_assoc()){
+                        $title_p = $row['title'];
+                        $url_p = $row['url'];
+                        $tags_p = $row['tags'];
+                        $featured_image = $row['featured_image'];
+                        $post_content = $row['post_content'];
+                        $thumbnail_img = $row['thumbnail_img'];
 
+                   
+                ?>
+                
+                <div class="col-md-4">
+                    <a href="http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/wedding-stories.php" class="blog-compact-item-container">
+                        <div class="blog-compact-item">
+                            <img src="https://mywedservices.s3.ap-south-1.amazonaws.com/<?php echo $thumbnail_img; ?>" alt="">
+                            <div class="blog-compact-item-content">
+                                <ul class="blog-post-tags">
+                                </ul>
+                                <h3><?php echo $title_p; ?></h3>
+                                <p><?php echo $post_content; ?></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <?php  }
+                }?>
+               
+                
                 <div class="col-md-12 centered-content">
-                    <a href="#" class="btn-def button margin-top-10">View More</a>
+                    <a href="http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/wedding-stories.php" class="btn-def button margin-top-10">View More</a>
                 </div>
 
             </div>

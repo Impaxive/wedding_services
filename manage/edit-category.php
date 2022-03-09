@@ -11,7 +11,7 @@ if (!isset($_SESSION['usernow'])) {
 <?php include("sidebar.php") ?>
 <?php require 'aws-sdk/aws-autoloader.php' ?>
         
-    <div class="col-9 main-content">
+    <div class="col-9 main-content bg-color">
         <div class="pt-3 px-3">
             <h4>Edit Category</h4>
         </div>

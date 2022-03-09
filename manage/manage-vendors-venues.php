@@ -1,11 +1,11 @@
 <?php
 include "dbconn.php";
-// session_start();
-// if (!isset($_SESSION['usernow'])) {
-//     echo "You are not authorized to view this page";
-//     exit(0);
-//   } else {
-// }
+session_start();
+if (!isset($_SESSION['usernow'])) {
+    echo "You are not authorized to view this page";
+    exit(0);
+  } else {
+}
 ?>
         <?php include("header.php") ?>
         <?php include("sidebar.php") ?>

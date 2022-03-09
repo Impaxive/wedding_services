@@ -14,6 +14,21 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
 
 </head>
+<style>
+  .dataTables_wrapper .dataTables_filter input {
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0,0,0,.54);
+    padding: 5px;
+    background-color: transparent;
+    margin-left: 3px;
+    border-radius:inherit;
+  }
+  #example_filter label {
+    color: rgba(0,0,0,.54);
+  }
+  /* .dataTables_filter { visibility: hidden;} */
+</style>
 <body>
     <header class="nav-header">
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -37,4 +52,4 @@
       </nav>
     </header>
     <div id="wrapper">
-      <div class="row g-0">
+      <div class="row wrapper-sub g-0">

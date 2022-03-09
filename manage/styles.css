@@ -1,8 +1,4 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
+body {
     margin: 0px;
     font-family: 'segoe ui';
     position: relative;
@@ -12,7 +8,6 @@
   .nav {
     height: 100px;
     width: 100%;
-    /* background-color: #1177ca; */
     padding: 10px 0;
     background-color: white;
     position: relative;
@@ -24,16 +19,21 @@
   }
   .navbar{
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%);
-    /* position: relative; */
     z-index: 2;
     height: 85px;
   }
 
-  /* .scroll-div{
-      position: fi;
-  } */
-  
+  .scroller{
+    height: calc(100vh - 85px) !important;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+ }
+
  
+span.i {
+    vertical-align: middle;
+    margin-right: 15px;
+}
 
   
 .nav-header{
@@ -46,6 +46,9 @@
 
 #wrapper {
     overflow-x: hidden;
+  }
+
+  .wrapper-sub{
     position: fixed;
     top: 85px;
     width: 100vw;
@@ -55,18 +58,6 @@
     width: 17rem;
     transition: margin 0.25s ease-out;
   }
-
- .scroller{
-    height: calc(100vh - 85px) !important;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
- }
-
- 
-span.i {
-    vertical-align: middle;
-    margin-right: 15px;
-}
 
 
 
@@ -110,7 +101,7 @@ span.i {
   
   }
 
-li > a.link-dark, li p > a.link-dark {
+  li > a.link-dark, li p > a.link-dark {
     border-radius: 5px;
     color: black;
     font-size: 17px;
@@ -261,6 +252,13 @@ table.dataTable {
 button.dt-button {
     border: unset !important;
     border-radius: 5px !important;
+    background: rgb(190, 166, 166) !important;
+    color:rgb(255, 255, 255) !important
+}
+
+button.dt-button {
+    border: unset !important;
+    border-radius: 5px !important;
     /* background: rgb(190, 166, 166) !important;
     color:rgb(255, 255, 255) !important */
     background: #fff !important;
@@ -334,6 +332,8 @@ input[type="color"]:focus,
 .text-center{
     text-align:center;
 }
+
+
 .ml-auto{
     margin-left: auto;
 }
@@ -356,6 +356,7 @@ input[type="color"]:focus,
 }
 .dropdown-item:hover:not([disabled]) {
     background: rgba(0,0,0,.04);}
+
 
 .font-14{font-size: 14px;}
 .font-15{font-size: 15px;}

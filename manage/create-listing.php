@@ -28,7 +28,7 @@ if (!isset($_SESSION['usernow'])) {
     <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 </head> -->
 
-        <div class="col-9 main-content">
+        <div class="col-9 main-content bg-color">
             <div class="pt-3 px-3">
                 <h4>Create Listing</h4>
             </div>

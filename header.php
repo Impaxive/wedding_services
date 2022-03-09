@@ -624,6 +624,9 @@ echo $_SESSION['list_individual_id'];
                                 <li><a href="http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/vendors.php">For Vendors</a>
                                 </li>
 
+                                <li><a href="http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/wedding-stories.php">Wedding Stories</a>
+                                </li>
+
                                 <li class="visible-sm visible-xs visible-sm-block visible-xs-block"><a href="http://ec2-13-234-29-49.ap-south-1.compute.amazonaws.com/live-booking.php">Live Booking</a>
                                 </li>
 

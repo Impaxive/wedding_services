@@ -9,7 +9,7 @@ if (!isset($_SESSION['usernow'])) {
 ?>
 <?php include("header.php") ?>
 <?php include("sidebar.php") ?>
-        <div class="col-9 main-content">
+        <div class="col-9 main-content bg-color">
             <div class="pt-3 px-3">
                 <h4>View Comment</h4>
             </div>

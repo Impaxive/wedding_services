@@ -9,7 +9,7 @@ if (!isset($_SESSION['usernow'])) {
 ?>
         <?php include("header.php") ?>
         <?php include("sidebar.php") ?>
-        <div class="col-9 main-content">
+        <div class="col-9 main-content bg-color">
             <div class="pt-3 px-3">
                 <h4>Contact Enquiries</h4>
             </div>
@@ -19,10 +19,10 @@ if (!isset($_SESSION['usernow'])) {
                         <table id="example" class="table table-striped" style="border: 1px solid gray;" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th style="width:25%">Name</th>
-                                    <th style="width:25%">Email ID</th>
-                                    <th style="width:25%">Created Date</th>
-                                    <th style="width:25%">Action</th>
+                                    <th style="width:20%">Name</th>
+                                    <th style="width:20%">Email ID</th>
+                                    <th style="width:20%">Created Date</th>
+                                    <th style="width:40%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,8 +33,8 @@ if (!isset($_SESSION['usernow'])) {
                                     if($result->num_rows > 0){
                                         while ($row = $result->fetch_assoc()) {
                                             $id=$row['id'];
-                                            $name = $row['name'];
-                                            $email_id = $row['email_id'];
+                                            $name = substr($row['name'],0,15);
+                                            $email_id = substr($row['email_id'],0,15);
                                             $subject = $row['subject'];
                                             $comments = $row['comments'];
                                             $created_date = $row['created_date'];
@@ -66,10 +66,10 @@ if (!isset($_SESSION['usernow'])) {
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th style="width:25%">Name</th>
-                                    <th style="width:25%">Email ID</th>
-                                    <th style="width:25%">Created Date</th>
-                                    <th style="width:25%">Action</th>
+                                    <th style="width:20%">Name</th>
+                                    <th style="width:20%">Email ID</th>
+                                    <th style="width:20%">Created Date</th>
+                                    <th style="width:40%">Action</th>
                                 </tr>
                             </tfoot>
                         </table>     

@@ -9,7 +9,7 @@ if (!isset($_SESSION['usernow'])) {
 ?>
             <?php include("header.php") ?>
             <?php include("sidebar.php") ?>
-            <div class="col-9 main-content">
+            <div class="col-9 main-content bg-color">
                 <div class="pt-3 px-3">
                     <h4>Manage Listings</h4>
                 </div>
@@ -23,7 +23,7 @@ if (!isset($_SESSION['usernow'])) {
                                         <th>Title</th>
                                         <th>Category</th>
                                         <th>Location</th>
-                                        <th style="width:30%">Action</th>
+                                        <th style="width:40%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['usernow'])) {
                                         <th>Title</th>
                                         <th>Category</th>
                                         <th>Location</th>
-                                        <th style="width:30%">Action</th>
+                                        <th style="width:40%">Action</th>
                                     </tr>
                                 </tfoot>
                             </table>     
